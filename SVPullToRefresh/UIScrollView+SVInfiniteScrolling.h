@@ -36,7 +36,7 @@ typedef NSUInteger SVInfiniteScrollingState;
 @property (nonatomic, readwrite) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
 @property (nonatomic, readonly) SVInfiniteScrollingState state;
 @property (nonatomic, readwrite) BOOL enabled;
-@property (nonatomic, readwrite) NSInteger sensitivity;
+@property (nonatomic, readwrite) CGFloat sensitivity;
 
 - (void)setCustomView:(UIView *)view forState:(SVInfiniteScrollingState)state;
 
