@@ -57,7 +57,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         SVInfiniteScrollingView *view = [[SVInfiniteScrollingView alloc] initWithFrame:CGRectMake(0, self.contentSize.height, self.bounds.size.width, SVInfiniteScrollingViewHeight)];
         view.infiniteScrollingHandler = actionHandler;
         view.scrollView = self;
-        view.sensitivity = - SVInfiniteScrollingViewHeight;
+        view.sensitivity = - SVInfiniteScrollingViewHeight * 3;
         [self addSubview:view];
         
         view.originalBottomInset = self.contentInset.bottom;
