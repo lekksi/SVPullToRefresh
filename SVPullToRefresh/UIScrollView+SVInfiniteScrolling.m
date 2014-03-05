@@ -197,7 +197,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         return;
     }
     if(self.state != SVInfiniteScrollingStateLoading && self.enabled) {
-        CGFloat scrollViewContentHeight = self.scrollView.contentSize.height;
+        CGFloat scrollViewContentHeight = self.scrollView.contentSize.height - self.scrollView.contentInset.top - self.scrollView.contentInset.bottom;
         
         UIView *customView = [self.viewForState objectAtIndex:self.state];
         BOOL hasCustomView = [customView isKindOfClass:[UIView class]];
@@ -205,7 +205,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         
         CGFloat scrollOffsetThreshold = scrollViewContentHeight - self.scrollView.bounds.size.height + self.sensitivity;
         
-        if(!self.scrollView.isDragging && self.state == SVInfiniteScrollingStateTriggered)
+        if(self.state == SVInfiniteScrollingStateTriggered)
             self.state = SVInfiniteScrollingStateLoading;
         else if(contentOffset.y > scrollOffsetThreshold && self.state == SVInfiniteScrollingStateStopped && self.scrollView.isDragging)
             self.state = SVInfiniteScrollingStateTriggered;
