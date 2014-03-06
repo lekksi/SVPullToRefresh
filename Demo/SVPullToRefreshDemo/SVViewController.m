@@ -25,7 +25,7 @@
     __weak SVViewController *weakSelf = self;
     
     // setup pull-to-refresh
-    [self.tableView addPullToRefreshWithActionHandler:^{
+    [self.tableView addRefreshControlWithActionHandler:^{
         NSLog(@"refresh top");
         [weakSelf insertRowAtTop];
     }];
@@ -60,7 +60,7 @@
         [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
         [weakSelf.tableView endUpdates];
         
-        [weakSelf.tableView.pullToRefreshView stopAnimating];
+        [weakSelf.tableView.refreshControl endRefreshing];
     });
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006A89F218C8607D00A8D0EA /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 006A89F118C8607D00A8D0EA /* ODRefreshControl.m */; };
 		2214365616B48FD70057C96E /* SVPullToRefresh.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2214365516B48FD70057C96E /* SVPullToRefresh.podspec */; };
 		22E0D9191545EE5B00BB6BB5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E0D9181545EE5B00BB6BB5 /* UIKit.framework */; };
 		22E0D91B1545EE5B00BB6BB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E0D91A1545EE5B00BB6BB5 /* Foundation.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		006A89F018C8607D00A8D0EA /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		006A89F118C8607D00A8D0EA /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		2214365516B48FD70057C96E /* SVPullToRefresh.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SVPullToRefresh.podspec; path = ../SVPullToRefresh.podspec; sourceTree = "<group>"; };
 		226989041639F55E00FCBB3B /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		2288145F16047C06005C6461 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
@@ -123,11 +126,13 @@
 		22E0D9391545EE7600BB6BB5 /* SVPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				006A89F018C8607D00A8D0EA /* ODRefreshControl.h */,
+				006A89F118C8607D00A8D0EA /* ODRefreshControl.m */,
 				226989041639F55E00FCBB3B /* SVPullToRefresh.h */,
-				22E0D93A1545EE7600BB6BB5 /* UIScrollView+SVPullToRefresh.h */,
-				22E0D93B1545EE7600BB6BB5 /* UIScrollView+SVPullToRefresh.m */,
 				2288145F16047C06005C6461 /* UIScrollView+SVInfiniteScrolling.h */,
 				2288146016047C06005C6461 /* UIScrollView+SVInfiniteScrolling.m */,
+				22E0D93A1545EE7600BB6BB5 /* UIScrollView+SVPullToRefresh.h */,
+				22E0D93B1545EE7600BB6BB5 /* UIScrollView+SVPullToRefresh.m */,
 			);
 			name = SVPullToRefresh;
 			path = ../SVPullToRefresh;
@@ -204,6 +209,7 @@
 				22E0D9291545EE5B00BB6BB5 /* SVAppDelegate.m in Sources */,
 				22E0D92C1545EE5B00BB6BB5 /* SVViewController.m in Sources */,
 				22E0D93D1545EE7600BB6BB5 /* UIScrollView+SVPullToRefresh.m in Sources */,
+				006A89F218C8607D00A8D0EA /* ODRefreshControl.m in Sources */,
 				22FDEC9D16390CC800DB53A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
