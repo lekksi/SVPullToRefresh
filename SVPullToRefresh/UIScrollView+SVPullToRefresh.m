@@ -37,14 +37,7 @@ static char UIScrollViewRefreshActionBlock;
 - (void)addRefreshControlWithActionHandler:(void (^)(void))actionHandler;
 {
     if (!self.refreshControl) {
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] < 6.0) {
-            self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self];
-        } else {
-            UIRefreshControl *systemRefreshCtrl = [[UIRefreshControl alloc] init];
-            [self addSubview:systemRefreshCtrl];
-            self.refreshControl = (ODRefreshControl *)systemRefreshCtrl;
-        }
-        
+        self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self];
         self.refreshActionBlock = actionHandler;
         [self.refreshControl addTarget:self action:@selector(refreshControlDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
     }

@@ -48,13 +48,7 @@ static inline CGFloat lerp(CGFloat a, CGFloat b, CGFloat p)
 }
 
 - (id)initInScrollView:(UIScrollView *)scrollView {
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 6.0) {
-        return [self initInScrollView:scrollView activityIndicatorView:nil];
-    } else {
-        UIRefreshControl *systemRefreshCtrl = [[UIRefreshControl alloc] init];
-        [scrollView addSubview:systemRefreshCtrl];
-        return (ODRefreshControl *)systemRefreshCtrl;
-    }
+    return [self initInScrollView:scrollView activityIndicatorView:nil];
 }
 
 - (id)initInScrollView:(UIScrollView *)scrollView activityIndicatorView:(UIView *)activity
