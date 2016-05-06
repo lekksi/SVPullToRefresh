@@ -29,7 +29,7 @@ static CGFloat const SVInfiniteScrollingViewHeight = 30;
 @property (nonatomic, readwrite) SVInfiniteScrollingState state;
 @property (nonatomic, strong) NSMutableArray *viewForState;
 @property (nonatomic, weak) UIScrollView *scrollView;
-@property (nonatomic, readwrite) CGFloat originalBottomInset;
+@property (nonatomic, readwrite) CGFloat bottomInsetModifier;
 @property (nonatomic, assign) BOOL wasTriggeredByUser;
 @property (nonatomic, assign) BOOL isObserving;
 
@@ -60,7 +60,6 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         view.sensitivity = - SVInfiniteScrollingViewHeight * 3;
         [self addSubview:view];
         
-        view.originalBottomInset = self.contentInset.bottom;
         self.infiniteScrollingView = view;
         self.showsInfiniteScrolling = YES;
     }
@@ -159,6 +158,10 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 
 #pragma mark - Scroll View
 
+- (CGFloat)originalBottomInset {
+    return self.scrollView.contentInset.bottom - self.bottomInsetModifier;
+}
+
 - (void)resetScrollViewContentInset {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
     currentInsets.bottom = self.originalBottomInset;
@@ -168,6 +171,9 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 - (void)setScrollViewContentInsetForInfiniteScrolling:(CGFloat)newInsetBottomHeight {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
     currentInsets.bottom = self.originalBottomInset + newInsetBottomHeight;
+
+    self.bottomInsetModifier = newInsetBottomHeight;
+
     [self setScrollViewContentInset:currentInsets];
 }
 
